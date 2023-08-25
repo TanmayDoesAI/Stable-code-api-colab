@@ -24,7 +24,3 @@ You can interact with the entire project in the live Colab environment. Click th
 - [StabilityAI](https://huggingface.co/stabilityai) for providing the StableCode Instruct Alpha 3b model.
 - [LabLab.ai](https://lablab.ai) for hosting the StableCode Hackathon.
 - Special thanks to the organizers, mentors, and contributors who made this project possible.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
