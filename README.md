@@ -19,6 +19,40 @@ You can interact with the entire project in the live Colab environment. Click th
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1MEY4gYU5GfoE59mwjcVHgu33QDUPh1Fq#scrollTo=ZDDNqlh2ZmzW)
 
+## API Calling
+#### Using Curl:
+```
+curl -X POST -H "Content-Type: application/json" -d "{\"input_string\": \"Write entire code for matrix multiplication in python with a test run\"}" http://17b7-34-138-136-161.ngrok.io/process_string
+```
+#### Using it in python:
+```python
+import requests
+
+#Add the link from the code here
+ngrok_link = "http://16f2-34-126-134-108.ngrok.io"
+
+api_url = f"{ngrok_link}/process_string"
+
+# JSON payload for the POST request
+payload = {
+    "input_string": "Write entire code for matrix multiplication in python with a test run"
+}
+
+# Making the POST request
+response = requests.post(api_url, json=payload)
+
+# Checking the response
+if response.status_code == 200:
+    response_json = response.json()
+    result = response_json.get('result', '')
+    formatted_result = result.replace('\\n', '\n').replace('\\t', '    ')
+    print("Response Code:", response.status_code)
+    print("Formatted Result:")
+    print(formatted_result)
+else:
+    print("Request failed with status code:", response.status_code)
+
+```
 ## Acknowledgments
 
 - [StabilityAI](https://huggingface.co/stabilityai) for providing the StableCode Instruct Alpha 3b model.
